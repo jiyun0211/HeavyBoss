@@ -1,0 +1,23 @@
+# Ignore Unreal Engine build and user files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vscode/
+
+# Ignore user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore log and temporary files
+*.log
+*.tmp
+*.bak
+
+# Do not ignore these
+!.uproject
+!Source/
+!Content/
+!Config/
