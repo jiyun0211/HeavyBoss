@@ -3,7 +3,9 @@ Binaries/
 DerivedDataCache/
 Intermediate/
 Saved/
+.vs/
 .vscode/
+
 
 # Ignore user-specific files
 *.suo
