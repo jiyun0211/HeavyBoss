@@ -1,5 +1,5 @@
 {
-	"FileVersion": 3, 
+	"FileVersion": 3,
 	"EngineAssociation": "5.5",
 	"Category": "",
 	"Description": "",
@@ -11,7 +11,8 @@
 			"AdditionalDependencies": [
 				"Engine",
 				"EnhancedInput",
-				"GameplayAbilities"
+				"GameplayAbilities",
+				"AIModule"
 			]
 		}
 	],
