@@ -4,6 +4,7 @@
 #include "Components/Combat/EnemyCombatComponent.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "MyGameplayTags.h"
+#include "WarriorFunctionLibrary.h"
 
 #include "MAV_BossFightDebugHelper.h"
 
@@ -11,20 +12,20 @@ void UEnemyCombatComponent::OnHitTargetActor(AActor* HitActor)
 {
 	if (OverlappedActors.Contains(HitActor))
 	{
-				return;
+		return;
 	}
 
 	OverlappedActors.AddUnique(HitActor);
 
 	//TODO:: Implement block check
 	bool bIsValidBlock = false;
-
-	const bool bIsPlayerBlocking = false;
+	
+	const bool bIsPlayerBlocking = UWarriorFunctionLibrary::NativeDoesActorHaveTag(HitActor,MyGameplayTags::Player_Status_Blocking);
 	const bool bIsMyAttackUnblockable = false;
 
 	if (bIsPlayerBlocking && !bIsMyAttackUnblockable)
 	{
-		//TODO::check if the block is valid
+		bIsValidBlock = UWarriorFunctionLibrary::IsValidBlock(GetOwningPawn(),HitActor);
 	}
 
 	FGameplayEventData EventData;

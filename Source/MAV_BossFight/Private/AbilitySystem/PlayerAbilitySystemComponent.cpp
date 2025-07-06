@@ -3,7 +3,7 @@
 
 #include "AbilitySystem/PlayerAbilitySystemComponent.h"
 #include "AbilitySystem/Abilities/PlayerHeroGameplayAbility.h"
-
+#include "MyGameplayTags.h"
 
 void UPlayerAbilitySystemComponent::OnAbilityInputPressed(const FGameplayTag& InInputTag)
 {
@@ -23,6 +23,18 @@ void UPlayerAbilitySystemComponent::OnAbilityInputPressed(const FGameplayTag& In
 
 void UPlayerAbilitySystemComponent::OnAbilityInputReleased(const FGameplayTag& InInputTag)
 {
+	if (!InInputTag.IsValid() || !InInputTag.MatchesTag(MyGameplayTags::InputTag_MustBeHeld))
+	{
+		return;
+	}
+
+	for (const FGameplayAbilitySpec& AbilitySpec : GetActivatableAbilities())
+	{  
+		if (AbilitySpec.GetDynamicSpecSourceTags().HasTagExact(InInputTag) && AbilitySpec.IsActive())
+		{
+			CancelAbilityHandle(AbilitySpec.Handle);
+		}
+	}
 }
 
 void UPlayerAbilitySystemComponent::GrantHeroWeaponAbilities(const TArray<FMAV_BossFightAbilitySet>& InDefaultWeaponAbilities, int32 ApplyLevel,TArray<FGameplayAbilitySpecHandle>& OutGrantedAbilitySpecHandles)

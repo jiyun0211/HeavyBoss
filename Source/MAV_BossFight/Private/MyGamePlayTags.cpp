@@ -13,6 +13,8 @@ namespace MyGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_LightAttack_Axe,"InputTag.LightAttack.Axe");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_HeavyAttack_Axe,"InputTag.HeavyAttack.Axe");
 
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_MustBeHeld,"InputTag.MustBeHeld");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_MustBeHeld_Block,"InputTag.MustBeHeld.Block");
 
 	/** Player Tags **/
 
@@ -20,7 +22,7 @@ namespace MyGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Unequip_Axe,"Player.Ability.Unequip.Axe");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_LightAttack_Axe,"Player.Ability.Attack.Light.Axe");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_HeavyAttack_Axe,"Player.Ability.Attack.Heavy.Axe");
-	
+	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Block,"Player.Ability.Block");
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Weapon_Axe,"Player.Weapon.Axe");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Equip_Axe,"Player.Event.Equip.Axe");
@@ -33,6 +35,7 @@ namespace MyGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Enemy_Weapon,"Enemy.Weapon");
 	UE_DEFINE_GAMEPLAY_TAG(Enemy_Ability_Melee,"Enemy.Ability.Melee");
 	UE_DEFINE_GAMEPLAY_TAG(Enemy_Ability_Ranged,"Enemy.Ability.Ranged");
+	UE_DEFINE_GAMEPLAY_TAG(Player_Status_Blocking,"Player.Status.Blocking");
 
 	/** Shared tags **/
 	UE_DEFINE_GAMEPLAY_TAG(Shared_Ability_HitReact,"Shared.Ability.HitReact");
