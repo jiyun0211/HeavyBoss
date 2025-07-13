@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystem/Abilities/PlayerGameplayAbility.h"
+#include "GameplayEffectTypes.h"
 #include "PlayerHeroGameplayAbility.generated.h"
 
 class APlayerCharacter;
@@ -27,8 +28,14 @@ public:
  	UFUNCTION(BlueprintPure, Category = "Warrior|Ability")
  	UHeroCombatComponent* GetHeroCombatComponentFromActorInfo();
 
+	UFUNCTION(BlueprintCallable, Category = "GAS|Attribute")
+    static float GetCurrentHealthFromSpecHandle(const FGameplayEffectSpecHandle& SpecHandle);
+
 	UFUNCTION(BlueprintPure, Category = "Warrior|Ability")
-	FGameplayEffectSpecHandle MakeHeroDamageEffectSpecHandle(TSubclassOf<UGameplayEffect> EffectClass,float InWeaponBaseDamage,FGameplayTag InCurrentAttackTypeTag,int32 InUsedComboCount);
+	FGameplayEffectSpecHandle MakeHeroDamageEffectSpecHandle(TSubclassOf<UGameplayEffect> EffectClass,float InWeaponBaseDamage,FGameplayTag InCurrentAttackTypeTag, int32 InUsedComboCount);
+
+	UFUNCTION(BlueprintPure, Category = "Warrior|Ability")
+	FGameplayEffectSpecHandle MakePlayerStaminaEffectSpecHandle(TSubclassOf<UGameplayEffect> EffectClass,float StaminaChange);
 
 private:
  	TWeakObjectPtr<APlayerCharacter> CachedPlayerCharacter;

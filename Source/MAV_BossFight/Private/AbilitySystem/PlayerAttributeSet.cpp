@@ -42,7 +42,7 @@ void UPlayerAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 		SetCurrentHealth(NewCurrentHealth);
 
 		const FString DebugString = FString::Printf(
-			TEXT("Old Health: %f, Damage Done: %f, NewCurrentHealth: %f"),
+			TEXT("Old Stamina: %f, Damage Done: %f, Stamina: %f"),
 			OldHealth,
 			DamageDone,
 			NewCurrentHealth

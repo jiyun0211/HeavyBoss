@@ -29,6 +29,8 @@ namespace MyGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Unequip_Axe,"Player.Event.Unequip.Axe");
 	UE_DEFINE_GAMEPLAY_TAG(Player_SetByCaller_AttackType_Light,"Player.SetByCaller.AttackType.Light");
 
+	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Blocked,"Player.Event.Blocked");
+
 
 	/** Enemy tags **/
 

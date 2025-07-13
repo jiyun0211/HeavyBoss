@@ -39,6 +39,8 @@ APlayerCharacter::APlayerCharacter()
  	GetCharacterMovement()->MaxWalkSpeed = 400.f;
  	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 
+	
+
 	HeroCombatComponent = CreateDefaultSubobject<UHeroCombatComponent>(TEXT("HeroCombatComponent"));
 }
 
@@ -95,6 +97,7 @@ void APlayerCharacter::BeginPlay()
 {
     Super::BeginPlay();
 }
+
 
 void APlayerCharacter::Input_Move(const FInputActionValue& InputActionValue)
 {	

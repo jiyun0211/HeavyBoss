@@ -34,7 +34,11 @@ void UEnemyCombatComponent::OnHitTargetActor(AActor* HitActor)
 
 	if (bIsValidBlock)
 	{
-		//TODO::Handle successful block
+		UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
+			HitActor,
+			MyGameplayTags::Player_Event_Blocked,
+			EventData
+		);
 	}
 	else
 	{

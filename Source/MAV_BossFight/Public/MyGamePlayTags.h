@@ -29,6 +29,9 @@ namespace MyGameplayTags
 	MAV_BOSSFIGHT_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Player_Event_Unequip_Axe);
 	MAV_BOSSFIGHT_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Player_SetByCaller_AttackType_Light);
 
+	MAV_BOSSFIGHT_API UE_DECLARE_GAMEPLAY_TAG_EXTERN(Player_Event_Blocked);
+
+
 
 	/** Enemy tags **/
 
