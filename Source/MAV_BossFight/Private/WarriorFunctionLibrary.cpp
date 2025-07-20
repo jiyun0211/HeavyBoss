@@ -103,3 +103,52 @@ float UWarriorFunctionLibrary::GetScalableFloatValueAtLevel(const FScalableFloat
 {
     return InScalableFloat.GetValueAtLevel(InLevel);
 }
+
+AActor* UWarriorFunctionLibrary::GetAvatarActorSafe(UAbilitySystemComponent* ASC)
+{
+    return ASC ? ASC->GetAvatarActor() : nullptr;
+}
+
+int32 UWarriorFunctionLibrary::GetAbilityLevelSafe(const FGameplayAbilitySpecHandle& Handle, UAbilitySystemComponent* ASC)
+{
+    if (!ASC) return 1;
+    
+    const FGameplayAbilitySpec* Spec = ASC->FindAbilitySpecFromHandle(Handle);
+    return Spec ? Spec->Level : 1;
+}
+
+FGameplayEffectSpecHandle UWarriorFunctionLibrary::MakePlayerStaminaEffectSpecHandle(
+    UPlayerAbilitySystemComponent* ASC,
+    TSubclassOf<UGameplayEffect> EffectClass,
+    AActor* SourceActor,
+    float StaminaChange)
+{
+    check(ASC);
+    check(EffectClass);
+    check(SourceActor);
+
+    FGameplayEffectContextHandle ContextHandle = ASC->MakeEffectContext();
+    ContextHandle.SetAbility(nullptr);
+    ContextHandle.AddSourceObject(SourceActor);
+
+    AActor* Avatar = GetAvatarActorSafe(ASC);
+    ContextHandle.AddInstigator(Avatar, Avatar);
+
+    float Level = 1.0f;
+
+    FGameplayEffectSpecHandle SpecHandle = ASC->MakeOutgoingSpec(
+        EffectClass,
+        Level,
+        ContextHandle
+    );
+
+    if (SpecHandle.IsValid())
+    {
+        SpecHandle.Data->SetSetByCallerMagnitude(
+            MyGameplayTags::Shared_SetByCaller_BaseDamage,
+            StaminaChange
+        );
+    }
+
+    return SpecHandle;
+}

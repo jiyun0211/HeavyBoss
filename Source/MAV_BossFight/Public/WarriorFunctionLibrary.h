@@ -5,11 +5,14 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "WarriorTypes/WarriorEnumTypes.h"
+#include "GameplayEffectTypes.h"
 #include "WarriorFunctionLibrary.generated.h"
 
 class UPlayerAbilitySystemComponent;
 class UPawnCombatComponent;
 struct FScalableFloat;
+class UGameplayEffect;
+
 
 /**
  * 
@@ -19,6 +22,7 @@ class MAV_BOSSFIGHT_API UWarriorFunctionLibrary : public UBlueprintFunctionLibra
 {
 	GENERATED_BODY()
 
+	
 public:
 	static UPlayerAbilitySystemComponent* NativeGetWarriorASCFromActor(AActor* InActor);
 
@@ -46,5 +50,16 @@ public:
 	
 	UFUNCTION(BlueprintPure, Category = "Warrior|FunctionLibrary", meta = (CompactNodeTitle = "Get Value At Level"))
 	static float GetScalableFloatValueAtLevel(const FScalableFloat& InScalableFloat,float InLevel = 1.f);
+	
+	static AActor* GetAvatarActorSafe(UAbilitySystemComponent* ASC);
+    
+	static int32 GetAbilityLevelSafe(const FGameplayAbilitySpecHandle& Handle, UAbilitySystemComponent* ASC);
+
+	UFUNCTION(BlueprintPure, Category = "Warrior|Ability")
+    static FGameplayEffectSpecHandle MakePlayerStaminaEffectSpecHandle(
+        UPlayerAbilitySystemComponent* ASC,
+        TSubclassOf<UGameplayEffect> EffectClass,
+        AActor* SourceActor,
+        float StaminaChange);
 
 };
