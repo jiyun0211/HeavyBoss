@@ -33,6 +33,7 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "Warrior")
 	int32 ComboMode = 0;
 
+
 	
 protected:
 

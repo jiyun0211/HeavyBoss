@@ -3,6 +3,7 @@
 #include "Characters/PlayerBaseCharacter.h"
 #include "AbilitySystem/PlayerAbilitySystemComponent.h"
 #include "AbilitySystem/PlayerAttributeSet.h"
+#include "MotionWarpingComponent.h"
 
 
 // Sets default values
@@ -17,6 +18,9 @@ APlayerBaseCharacter::APlayerBaseCharacter()
     PlayerAbilitySystemComponent = CreateDefaultSubobject<UPlayerAbilitySystemComponent>(TEXT("PlayerAbilitySystemComponent"));
 
     PlayerAttributeSet = CreateDefaultSubobject<UPlayerAttributeSet>(TEXT("PlayerAttributeSet"));
+
+    MotionWarpingComponent = CreateDefaultSubobject<UMotionWarpingComponent>(TEXT("MotionWarpingComponent"));
+
 }
 
 UPawnCombatComponent* APlayerBaseCharacter::GetPawnCombatComponent() const

@@ -11,6 +11,9 @@
 class UPlayerAbilitySystemComponent;
 class UPlayerAttributeSet;
 class UDataAsset_StartUpDataBase;
+class UMotionWarpingComponent;
+
+
 
 UCLASS()
 class MAV_BOSSFIGHT_API APlayerBaseCharacter : public ACharacter, public IAbilitySystemInterface, public IPawnCombatInterface
@@ -39,6 +42,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AbilitySystem")
 	UPlayerAttributeSet* PlayerAttributeSet;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MotionWarping")
+	UMotionWarpingComponent* MotionWarpingComponent;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "CharacterData")
  	TSoftObjectPtr<UDataAsset_StartUpDataBase> CharacterStartUpData;
