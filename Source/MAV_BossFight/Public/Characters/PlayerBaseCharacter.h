@@ -21,6 +21,7 @@ class MAV_BOSSFIGHT_API APlayerBaseCharacter : public ACharacter, public IAbilit
 	GENERATED_BODY()
 
 public:
+	
 	// Sets default values for this character's properties
 	APlayerBaseCharacter();
 
@@ -33,6 +34,7 @@ public:
 	//~ End PawnCombatInterface Interface
 
 protected:
+
 	//~ Begin APawn Interface.
 	virtual void PossessedBy(AController* NewController) override;
 	//~ End APawn Interface
@@ -53,4 +55,13 @@ public:
 	FORCEINLINE UPlayerAbilitySystemComponent* GetPlayerAbilitySystemComponent() const {return PlayerAbilitySystemComponent;}
 
 	FORCEINLINE UPlayerAttributeSet* GetPlayerAttributeSet() const {return PlayerAttributeSet;}
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Level")
+	int32 CharacterLevel = 1;
+
+	UFUNCTION(BlueprintCallable, Category="Level")
+	virtual int32 GetLv() const { return CharacterLevel; }
+
+	UFUNCTION(BlueprintCallable, Category="Level")
+	virtual void SetLv(int32 NewLevel) { CharacterLevel = NewLevel; }
 };

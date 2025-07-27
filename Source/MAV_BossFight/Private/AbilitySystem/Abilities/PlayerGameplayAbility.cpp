@@ -28,7 +28,7 @@ int32 UPlayerGameplayAbility::GetComboModeFromCharacter() const
 	APlayerCharacter* PC = Cast<APlayerCharacter>(GetAvatarActorFromActorInfo());
 	if (PC)
 	{
-		return PC->ComboMode;
+		return PC->CharacterLevel;
 	}
 	return -1;
 }
