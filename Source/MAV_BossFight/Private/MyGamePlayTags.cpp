@@ -15,6 +15,7 @@ namespace MyGameplayTags
 
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_MustBeHeld,"InputTag.MustBeHeld");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_MustBeHeld_Block,"InputTag.MustBeHeld.Block");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_Roll,"InputTag.Roll");
 
 	/** Player Tags **/
 
@@ -23,6 +24,12 @@ namespace MyGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_LightAttack_Axe,"Player.Ability.Attack.Light.Axe");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_HeavyAttack_Axe,"Player.Ability.Attack.Heavy.Axe");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Block,"Player.Ability.Block");
+
+	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Roll,"Player.Ability.Roll");
+
+	UE_DEFINE_GAMEPLAY_TAG(Player_Status_Rolling,"Player.Status.Rolling");
+
+
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Weapon_Axe,"Player.Weapon.Axe");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_Equip_Axe,"Player.Event.Equip.Axe");
