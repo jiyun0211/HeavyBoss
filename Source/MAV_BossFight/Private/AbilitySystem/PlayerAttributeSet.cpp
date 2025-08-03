@@ -1,62 +1,66 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "AbilitySystem/PlayerAttributeSet.h"
+#include "AbilitySystemComponent.h"
 #include "GameplayEffectExtension.h"
-
-#include "MAV_BossFightDebugHelper.h"
+#include "TimerManager.h"
 
 UPlayerAttributeSet::UPlayerAttributeSet()
 {
-	InitCurrentHealth(1.f);
-	InitMaxHealth(1.f);
-	InitCurrentRage(1.f);
-	InitMaxRage(1.f);
-	InitAttackPower(1.f);
-	InitDefensePower(1.f);
+    InitCurrentHealth(1.f);
+    InitMaxHealth(1.f);
+    InitCurrentRage(1.f);
+    InitMaxRage(1.f);
+    InitAttackPower(1.f);
+    InitDefensePower(1.f);
+	InitLevel(1.f);
 }
 
 void UPlayerAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
-{	
-	if (Data.EvaluatedData.Attribute == GetCurrentHealthAttribute())
+{
+    Super::PostGameplayEffectExecute(Data);
+
+    if (Data.EvaluatedData.Attribute == GetCurrentHealthAttribute())
+    {
+        float NewHealth = FMath::Clamp(GetCurrentHealth(), 0.f, GetMaxHealth());
+        SetCurrentHealth(NewHealth);
+
+        if (NewHealth == 0.f)
+        {
+            if (Data.Target.AbilityActorInfo.IsValid())
+            {
+                UAbilitySystemComponent* ASC = Data.Target.AbilityActorInfo->AbilitySystemComponent.Get();
+                if (ASC)
+                {
+                    ASC->AddLooseGameplayTag(FGameplayTag::RequestGameplayTag(FName("Player.Status.BlockRegen")));
+                    FTimerHandle Handle;
+                    ASC->GetWorld()->GetTimerManager().SetTimer(Handle,
+                        [ASC]()
+                        {
+                            if (ASC) ASC->RemoveLooseGameplayTag(FGameplayTag::RequestGameplayTag(FName("Player.Status.BlockRegen")));
+                        }, 2.0f, false);
+                }
+            }
+        }
+    }
+
+    // Rage 처리
+    if (Data.EvaluatedData.Attribute == GetCurrentRageAttribute())
+    {
+        const float NewCurrentRage = FMath::Clamp(GetCurrentRage(), 0.f, GetMaxRage());
+        SetCurrentRage(NewCurrentRage);
+    }
+
+    // 피해 처리
+    if (Data.EvaluatedData.Attribute == GetDamageTakenAttribute())
+    {
+        const float OldHealth = GetCurrentHealth();
+        const float DamageDone = GetDamageTaken();
+        const float NewCurrentHealth = FMath::Clamp(OldHealth - DamageDone, 0.f, GetMaxHealth());
+
+        SetCurrentHealth(NewCurrentHealth);
+    }
+
+	if (Data.EvaluatedData.Attribute == GetLevelAttribute())
 	{
-		const float NewCurrentHealth = FMath::Clamp(GetCurrentHealth(),0.f,GetMaxHealth());
-
-		SetCurrentHealth(NewCurrentHealth);
+		SetLevel(FMath::Clamp(GetLevel(), 1.f, 5.f));
 	}
-
-	if (Data.EvaluatedData.Attribute == GetCurrentRageAttribute())
-	{
-		const float NewCurrentRage = FMath::Clamp(GetCurrentRage(),0.f,GetMaxRage());
-
-		SetCurrentRage(NewCurrentRage);
-	}
-
-	if (Data.EvaluatedData.Attribute == GetDamageTakenAttribute())
-	{
-		const float OldHealth = GetCurrentHealth();
-		const float DamageDone = GetDamageTaken();
-
-		const float NewCurrentHealth = FMath::Clamp(OldHealth - DamageDone,0.f,GetMaxHealth());
-
-		SetCurrentHealth(NewCurrentHealth);
-
-		const FString DebugString = FString::Printf(
-			TEXT("Old Stamina: %f, Damage Done: %f, Stamina: %f"),
-			OldHealth,
-			DamageDone,
-			NewCurrentHealth
-		);
-
-		Debug::Print(DebugString,FColor::Green);
-
-		//TODO::Notify the UI 
-
-		//TODO::Handle character death
-		if (NewCurrentHealth == 0.f)
-		{
-
-		}
-	}
-	
 }
