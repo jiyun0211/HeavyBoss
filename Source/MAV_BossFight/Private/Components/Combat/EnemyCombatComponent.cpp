@@ -64,6 +64,12 @@ void UEnemyCombatComponent::OnHitTargetActor(AActor* HitActor)
 			MyGameplayTags::Player_Event_Blocked,
 			EventData
 		);
+		
+		UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
+			GetOwningPawn(),
+			MyGameplayTags::Player_Event_Blocked,
+			EventData
+		);
 	}
 	else
 	{
