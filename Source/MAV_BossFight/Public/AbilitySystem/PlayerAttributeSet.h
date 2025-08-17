@@ -7,6 +7,7 @@
 #include "AbilitySystem/PlayerAbilitySystemComponent.h"
 #include "PlayerAttributeSet.generated.h"
 
+
 #define ATTRIBUTE_ACCESSORS(ClassName, PropertyName) \
 GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, PropertyName) \
 GAMEPLAYATTRIBUTE_VALUE_GETTER(PropertyName) \
@@ -53,4 +54,8 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Damage")
 	FGameplayAttributeData DamageTaken;
 	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,DamageTaken)
+
+	UPROPERTY(BlueprintReadOnly, Category = "Level")
+	FGameplayAttributeData Level;
+	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,Level)
 };

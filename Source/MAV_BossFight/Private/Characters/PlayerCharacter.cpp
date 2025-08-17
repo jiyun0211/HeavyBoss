@@ -56,8 +56,8 @@ void APlayerCharacter::PossessedBy(AController* NewController)
  	{	
  		const FString ASCText = FString::Printf(TEXT("Owner Actor: %s, AvatarActor: %s"),*PlayerAbilitySystemComponent->GetOwnerActor()->GetActorLabel(),*PlayerAbilitySystemComponent->GetAvatarActor()->GetActorLabel());
  		
- 		Debug::Print(TEXT("Ability system component valid. ") + ASCText,FColor::Green);
- 		Debug::Print(TEXT("AttributeSet valid. ") + ASCText,FColor::Green);
+ 		//Debug::Print(TEXT("Ability system component valid. ") + ASCText,FColor::Green);
+ 		//Debug::Print(TEXT("AttributeSet valid. ") + ASCText,FColor::Green);
  	}
 
 	if (HasAuthority())
