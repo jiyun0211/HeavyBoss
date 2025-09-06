@@ -37,7 +37,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Debug",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -54,7 +54,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Debug",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -74,7 +74,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Debug",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -91,7 +91,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"DebugGame",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -108,7 +108,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"DebugGame",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -128,7 +128,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"DebugGame",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -145,7 +145,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Development",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -162,7 +162,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Development",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -182,7 +182,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Development",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -199,7 +199,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Test",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -216,7 +216,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Test",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -236,7 +236,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Test",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -253,7 +253,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Shipping",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -270,7 +270,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Shipping",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -290,7 +290,7 @@
 					"MAV_BossFight",
 					"Win64",
 					"Shipping",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -307,7 +307,7 @@
 					"MAV_BossFightEditor",
 					"Win64",
 					"Debug",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -324,7 +324,7 @@
 					"MAV_BossFightEditor",
 					"Win64",
 					"Debug",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -344,7 +344,7 @@
 					"MAV_BossFightEditor",
 					"Win64",
 					"Debug",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -361,7 +361,7 @@
 					"MAV_BossFightEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -378,7 +378,7 @@
 					"MAV_BossFightEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -398,7 +398,7 @@
 					"MAV_BossFightEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -415,7 +415,7 @@
 					"MAV_BossFightEditor",
 					"Win64",
 					"Development",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -432,7 +432,7 @@
 					"MAV_BossFightEditor",
 					"Win64",
 					"Development",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -452,7 +452,7 @@
 					"MAV_BossFightEditor",
 					"Win64",
 					"Development",
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -469,7 +469,7 @@
 			{
 				"name": "Launch MAV_BossFight (Debug)",
 				"request": "launch",
-				"program": "C:\\Ureal_Projects\\MAV_BossFight\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"program": "C:\\Git\\HeavyBoss\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
 				"preLaunchTask": "MAV_BossFight Win64 Debug Build",
 				"args": [
 				],
@@ -485,7 +485,7 @@
 			{
 				"name": "Launch MAV_BossFight (DebugGame)",
 				"request": "launch",
-				"program": "C:\\Ureal_Projects\\MAV_BossFight\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"program": "C:\\Git\\HeavyBoss\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
 				"preLaunchTask": "MAV_BossFight Win64 DebugGame Build",
 				"args": [
 				],
@@ -501,7 +501,7 @@
 			{
 				"name": "Launch MAV_BossFight (Development)",
 				"request": "launch",
-				"program": "C:\\Ureal_Projects\\MAV_BossFight\\Binaries\\Win64\\UnrealGame.exe",
+				"program": "C:\\Git\\HeavyBoss\\Binaries\\Win64\\UnrealGame.exe",
 				"preLaunchTask": "MAV_BossFight Win64 Development Build",
 				"args": [
 				],
@@ -517,7 +517,7 @@
 			{
 				"name": "Launch MAV_BossFight (Test)",
 				"request": "launch",
-				"program": "C:\\Ureal_Projects\\MAV_BossFight\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"program": "C:\\Git\\HeavyBoss\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
 				"preLaunchTask": "MAV_BossFight Win64 Test Build",
 				"args": [
 				],
@@ -533,7 +533,7 @@
 			{
 				"name": "Launch MAV_BossFight (Shipping)",
 				"request": "launch",
-				"program": "C:\\Ureal_Projects\\MAV_BossFight\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"program": "C:\\Git\\HeavyBoss\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
 				"preLaunchTask": "MAV_BossFight Win64 Shipping Build",
 				"args": [
 				],
@@ -552,7 +552,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
 				"preLaunchTask": "MAV_BossFightEditor Win64 Debug Build",
 				"args": [
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject"
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
 				"stopAtEntry": false,
@@ -569,7 +569,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
 				"preLaunchTask": "MAV_BossFightEditor Win64 DebugGame Build",
 				"args": [
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject"
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
 				"stopAtEntry": false,
@@ -586,7 +586,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.5\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
 				"preLaunchTask": "MAV_BossFightEditor Win64 Development Build",
 				"args": [
-					"C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject"
+					"C:\\Git\\HeavyBoss\\MAV_BossFight.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.5",
 				"stopAtEntry": false,
@@ -606,7 +606,7 @@
 				"args": [
 					"-projectfiles",
 					"-vscode",
-					"-project=C:\\Ureal_Projects\\MAV_BossFight\\MAV_BossFight.uproject",
+					"-project=C:\\Git\\HeavyBoss\\MAV_BossFight.uproject",
 					"-game",
 					"-engine",
 					"-dotnet"

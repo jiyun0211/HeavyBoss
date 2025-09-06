@@ -18,6 +18,10 @@ namespace MyGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_MustBeHeld_Run,"InputTag.MustBeHeld.Run");
 	UE_DEFINE_GAMEPLAY_TAG(InputTag_Roll,"InputTag.Roll");
 
+	
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_Toggleable,"InputTag.Toggleable");
+	UE_DEFINE_GAMEPLAY_TAG(InputTag_Toggleable_TargetLock,"InputTag.Toggleable.TargetLock");
+
 	/** Player Tags **/
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Equip_Axe,"Player.Ability.Equip.Axe");
@@ -28,9 +32,11 @@ namespace MyGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Run,"Player.Ability.Run");
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_Roll,"Player.Ability.Roll");
+	UE_DEFINE_GAMEPLAY_TAG(Player_Ability_TargetLock,"Player.Ability.TargetLock");
 
 	UE_DEFINE_GAMEPLAY_TAG(Player_Status_BlockRegen,"Player.Status.BlockRegen");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Status_Rolling,"Player.Status.Rolling");
+	UE_DEFINE_GAMEPLAY_TAG(Player_Status_TargetLock,"Player.Status.TargetLock");
 
 
 
@@ -54,6 +60,7 @@ namespace MyGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Shared_Event_MeleeHit,"Shared.Event.MeleeHit");
 	UE_DEFINE_GAMEPLAY_TAG(Shared_Event_HitReact,"Shared.Event.HitReact");
 	UE_DEFINE_GAMEPLAY_TAG(Shared_SetByCaller_BaseDamage,"Shared.SetByCaller.BaseDamage");
+	UE_DEFINE_GAMEPLAY_TAG(Shared_Status_Dead,"Shared.Status.Dead");
 
 	
 }

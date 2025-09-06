@@ -16,8 +16,19 @@ void UPlayerAbilitySystemComponent::OnAbilityInputPressed(const FGameplayTag& In
 	{
 		if(!AbilitySpec.GetDynamicSpecSourceTags().HasTagExact(InInputTag)
     ) continue;
+		if(InInputTag.MatchesTag(MyGameplayTags::InputTag_Toggleable)){
+			if(AbilitySpec.IsActive())
+			{
+				CancelAbilityHandle(AbilitySpec.Handle);
+			}
+			else
+			{
+				TryActivateAbility(AbilitySpec.Handle);
+			}
+		}else{
 
-		TryActivateAbility(AbilitySpec.Handle);
+			TryActivateAbility(AbilitySpec.Handle);
+		}
 	}
 }
 
