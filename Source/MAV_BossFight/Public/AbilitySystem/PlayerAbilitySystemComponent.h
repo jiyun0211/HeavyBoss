@@ -18,6 +18,7 @@ class MAV_BOSSFIGHT_API UPlayerAbilitySystemComponent : public UAbilitySystemCom
 
 public:
 	void OnAbilityInputPressed(const FGameplayTag& InInputTag);
+	void CheckAndCancelAbilitiesIfDead();
 	void OnAbilityInputReleased(const FGameplayTag& InInputTag);
 
 	UFUNCTION(BlueprintCallable, Category = "Warrior|Ability", meta = (ApplyLevel = "1"))

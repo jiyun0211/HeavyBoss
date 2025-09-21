@@ -5,6 +5,17 @@
 #include "AbilitySystem/Abilities/PlayerHeroGameplayAbility.h"
 #include "MyGameplayTags.h"
 
+
+void UPlayerAbilitySystemComponent::CheckAndCancelAbilitiesIfDead()
+{
+    FGameplayTag DeadTag = FGameplayTag::RequestGameplayTag(FName("Shared.Status.Dead"));
+
+    if (HasMatchingGameplayTag(DeadTag))
+    {
+        CancelAllAbilities(nullptr);
+    }
+}
+
 void UPlayerAbilitySystemComponent::OnAbilityInputPressed(const FGameplayTag& InInputTag)
 {
 	if (!InInputTag.IsValid())
@@ -88,6 +99,7 @@ void UPlayerAbilitySystemComponent::RemovedGrantedHeroWeaponAbilities(UPARAM(ref
 
 bool UPlayerAbilitySystemComponent::TryActivateAbilityByTag(FGameplayTag AbilityTagToActivate)
 {
+	CheckAndCancelAbilitiesIfDead();
 	check(AbilityTagToActivate.IsValid());
 
 	TArray<FGameplayAbilitySpec*> FoundAbilitySpecs;
