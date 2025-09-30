@@ -50,3 +50,11 @@ void AWarriorWeaponBase::OnCollisionBoxEndOverlap(UPrimitiveComponent* Overlappe
 		}
 	}
 }
+
+void AWarriorWeaponBase::ToggleCollision(bool bEnable)
+{
+    if (bEnable)
+        WeaponCollisionBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+    else
+        WeaponCollisionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+}

@@ -8,7 +8,15 @@
 #include "AbilitySystemBlueprintLibrary.h"
 
 
-
+APlayerCharacter* UPlayerGameplayAbility::GetPlayerCharacterFromActorInfo()
+{   
+    if (!CachedPlayerCharacter.IsValid())
+    {
+        CachedPlayerCharacter = Cast<APlayerCharacter>(CurrentActorInfo->AvatarActor);
+    }
+   
+    return CachedPlayerCharacter.IsValid()? CachedPlayerCharacter.Get() : nullptr;
+}
  
 void UPlayerGameplayAbility::OnGiveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec)
 {

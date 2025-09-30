@@ -51,6 +51,7 @@ namespace MyGameplayTags
 	/** Enemy tags **/
 
 	UE_DEFINE_GAMEPLAY_TAG(Enemy_Weapon,"Enemy.Weapon");
+	UE_DEFINE_GAMEPLAY_TAG(Enemy_RushCollider,"Enemy.RushCollider");
 	UE_DEFINE_GAMEPLAY_TAG(Enemy_Ability_Melee,"Enemy.Ability.Melee");
 	UE_DEFINE_GAMEPLAY_TAG(Enemy_Ability_Ranged,"Enemy.Ability.Ranged");
 	UE_DEFINE_GAMEPLAY_TAG(Player_Status_Blocking,"Player.Status.Blocking");

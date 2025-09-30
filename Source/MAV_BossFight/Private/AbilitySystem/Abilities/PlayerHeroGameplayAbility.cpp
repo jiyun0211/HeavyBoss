@@ -9,15 +9,6 @@
 #include "AbilitySystem/PlayerAttributeSet.h"
 #include "MyGameplayTags.h"
 
-APlayerCharacter* UPlayerHeroGameplayAbility::GetPlayerCharacterFromActorInfo()
-{   
-    if (!CachedPlayerCharacter.IsValid())
-    {
-        CachedPlayerCharacter = Cast<APlayerCharacter>(CurrentActorInfo->AvatarActor);
-    }
-   
-    return CachedPlayerCharacter.IsValid()? CachedPlayerCharacter.Get() : nullptr;
-}
 
 AMyPlayerController* UPlayerHeroGameplayAbility::GetMyControllerFromActorInfo()
 {	

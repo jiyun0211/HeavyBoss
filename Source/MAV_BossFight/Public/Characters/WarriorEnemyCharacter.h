@@ -29,6 +29,7 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combat")
 	UEnemyCombatComponent* EnemyCombatComponent;
+	virtual void BeginPlay() override;
 
 private:
 	void InitEnemyStartUpData();
@@ -36,3 +37,4 @@ private:
 public:
 	FORCEINLINE UEnemyCombatComponent* GetEnemyCombatComponent() const { return EnemyCombatComponent;}
 };
+
