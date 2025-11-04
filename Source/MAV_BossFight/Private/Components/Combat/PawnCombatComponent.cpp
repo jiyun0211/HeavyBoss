@@ -47,46 +47,48 @@ AWarriorWeaponBase* UPawnCombatComponent::GetCharacterCarriedWeaponByTag(FGamepl
 void UPawnCombatComponent::ToggleWeaponCollisionByTag(FGameplayTag WeaponTag, bool bEnable)
 {
     AWarriorWeaponBase* WeaponToToggle = GetCharacterCarriedWeaponByTag(WeaponTag);
-
+    
     if (!WeaponToToggle)
     {
         UE_LOG(LogTemp, Warning, TEXT("ToggleWeaponCollisionByTag: Weapon with Tag %s not found"), *WeaponTag.ToString());
         return;
     }
-
+    
     UPrimitiveComponent* WeaponCollisionBox = WeaponToToggle->GetWeaponCollisionBox();
-
+    
     if (!WeaponCollisionBox)
     {
         UE_LOG(LogTemp, Warning, TEXT("ToggleWeaponCollisionByTag: Weapon %s has no CollisionBox"), *WeaponToToggle->GetName());
         return;
     }
-
+    
     if (bEnable)
     {
+        UE_LOG(LogTemp, Warning, TEXT("ON"));
         WeaponCollisionBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
         WeaponCollisionBox->SetGenerateOverlapEvents(true);
     }
     else
     {
+        UE_LOG(LogTemp, Warning, TEXT("OFF"));
         WeaponCollisionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
         OverlappedActors.Empty();
     }
 }
+
+
+
 bool UPawnCombatComponent::DebugCheckWeaponByTag(FGameplayTag WeaponTag)
 {
-    // 1️⃣ 태그로 무기 검색
     AWarriorWeaponBase* FoundWeapon = GetCharacterCarriedWeaponByTag(WeaponTag);
 
-    // 2️⃣ 존재 여부 검사
     if (!FoundWeapon)
     {
         UE_LOG(LogTemp, Warning, TEXT("[CombatComponent] Weapon with Tag '%s' NOT FOUND."), *WeaponTag.ToString());
         return false;
     }
 
-    // 3️⃣ 디버그 정보 출력
     UE_LOG(LogTemp, Warning, TEXT("[CombatComponent] Weapon FOUND: %s"), *FoundWeapon->GetName());
 
     // Instigator / Owner 검사
@@ -122,6 +124,8 @@ bool UPawnCombatComponent::DebugCheckWeaponByTag(FGameplayTag WeaponTag)
 
     return true;
 }
+
+
 AWarriorWeaponBase* UPawnCombatComponent::GetCharacterCurrentEquippedWeapon() const
 {
  	if (!CurrentEquippedWeaponTag.IsValid())

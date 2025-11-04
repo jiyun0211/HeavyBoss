@@ -16,7 +16,7 @@ void UEnemyCombatComponent::OnHitTargetActor(AActor* HitActor)
     {
         return;
     }
-
+    
     OverlappedActors.AddUnique(HitActor);
 
     //TODO:: Implement block check
@@ -24,7 +24,7 @@ void UEnemyCombatComponent::OnHitTargetActor(AActor* HitActor)
     
     const bool bIsPlayerBlocking = UWarriorFunctionLibrary::NativeDoesActorHaveTag(HitActor,MyGameplayTags::Player_Status_Blocking);
     const bool bIsMyAttackUnblockable = false;
-
+    
     
     if (bIsPlayerBlocking && !bIsMyAttackUnblockable)
     {
@@ -39,7 +39,7 @@ void UEnemyCombatComponent::OnHitTargetActor(AActor* HitActor)
             {
                 float MyLevel = MyAttributes->GetLevel();
                 float OpponentLevel = OpponentAttributes->GetLevel();
-
+                
                 // Level 조건 검사
                 if (MyLevel > OpponentLevel)
                 {
@@ -53,12 +53,12 @@ void UEnemyCombatComponent::OnHitTargetActor(AActor* HitActor)
             }
         }
     }
-
+    
     FGameplayEventData EventData;
     EventData.Instigator = GetOwningPawn();
     EventData.Target = HitActor;
-
-
+    
+    
     if (bIsValidBlock)
     {
         UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
@@ -75,10 +75,12 @@ void UEnemyCombatComponent::OnHitTargetActor(AActor* HitActor)
     }
     else
     {
+        UE_LOG(LogTemp, Warning, TEXT("OnHit"));
         UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
             GetOwningPawn(),
             MyGameplayTags::Shared_Event_MeleeHit,
             EventData
         );
+        
     }
 }
