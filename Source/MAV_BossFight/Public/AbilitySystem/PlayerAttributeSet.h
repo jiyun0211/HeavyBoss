@@ -26,22 +26,18 @@ public:
 	UPlayerAttributeSet();
 
 	virtual void PostGameplayEffectExecute(const struct FGameplayEffectModCallbackData &Data) override;
+	
+	UPROPERTY(BlueprintReadOnly, Category = "Phase")
+	FGameplayAttributeData Phase;
+	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,Phase)
 
 	UPROPERTY(BlueprintReadOnly, Category = "Health")
 	FGameplayAttributeData CurrentHealth;
 	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,CurrentHealth)
-
+	
 	UPROPERTY(BlueprintReadOnly, Category = "Health")
 	FGameplayAttributeData MaxHealth;
 	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,MaxHealth)
-
-	UPROPERTY(BlueprintReadOnly, Category = "Rage")
-	FGameplayAttributeData CurrentRage;
-	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,CurrentRage)
-
-	UPROPERTY(BlueprintReadOnly, Category = "Rage")
-	FGameplayAttributeData MaxRage;
-	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,MaxRage)
 
 	UPROPERTY(BlueprintReadOnly, Category = "Damage")
 	FGameplayAttributeData AttackPower;

@@ -6,9 +6,8 @@
 UPlayerAttributeSet::UPlayerAttributeSet()
 {
     InitCurrentHealth(1.f);
+    InitPhase(1.f);
     InitMaxHealth(1.f);
-    InitCurrentRage(1.f);
-    InitMaxRage(1.f);
     InitAttackPower(1.f);
     InitDefensePower(1.f);
 	InitLevel(1.f);
@@ -42,12 +41,6 @@ void UPlayerAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
         }
     }
 
-    // Rage 처리
-    if (Data.EvaluatedData.Attribute == GetCurrentRageAttribute())
-    {
-        const float NewCurrentRage = FMath::Clamp(GetCurrentRage(), 0.f, GetMaxRage());
-        SetCurrentRage(NewCurrentRage);
-    }
 
     // 피해 처리
     if (Data.EvaluatedData.Attribute == GetDamageTakenAttribute())
