@@ -25,6 +25,7 @@ float UHeroCombatComponent::GetHeroCurrentEquippWeaponDamageAtLevel(float InLeve
 
 void UHeroCombatComponent::OnHitTargetActor(AActor* HitActor)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Detect1"));
     if (OverlappedActors.Contains(HitActor))
 	{
 		return;
@@ -35,6 +36,7 @@ void UHeroCombatComponent::OnHitTargetActor(AActor* HitActor)
 	FGameplayEventData Data;
 	Data.Instigator = GetOwningPawn();
 	Data.Target = HitActor;
+	UE_LOG(LogTemp, Warning, TEXT("SEND!"));
 
 	UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
 		GetOwningPawn(),

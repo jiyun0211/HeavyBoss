@@ -44,6 +44,88 @@ AWarriorWeaponBase* UPawnCombatComponent::GetCharacterCarriedWeaponByTag(FGamepl
  	return nullptr;
 }
  
+void UPawnCombatComponent::ToggleWeaponCollisionByTag(FGameplayTag WeaponTag, bool bEnable)
+{
+    AWarriorWeaponBase* WeaponToToggle = GetCharacterCarriedWeaponByTag(WeaponTag);
+    
+    if (!WeaponToToggle)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("ToggleWeaponCollisionByTag: Weapon with Tag %s not found"), *WeaponTag.ToString());
+        return;
+    }
+    
+    UPrimitiveComponent* WeaponCollisionBox = WeaponToToggle->GetWeaponCollisionBox();
+    
+    if (!WeaponCollisionBox)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("ToggleWeaponCollisionByTag: Weapon %s has no CollisionBox"), *WeaponToToggle->GetName());
+        return;
+    }
+    
+    if (bEnable)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("ON"));
+        WeaponCollisionBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+        WeaponCollisionBox->SetGenerateOverlapEvents(true);
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("OFF"));
+        WeaponCollisionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+        OverlappedActors.Empty();
+    }
+}
+
+
+
+bool UPawnCombatComponent::DebugCheckWeaponByTag(FGameplayTag WeaponTag)
+{
+    AWarriorWeaponBase* FoundWeapon = GetCharacterCarriedWeaponByTag(WeaponTag);
+
+    if (!FoundWeapon)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("[CombatComponent] Weapon with Tag '%s' NOT FOUND."), *WeaponTag.ToString());
+        return false;
+    }
+
+    UE_LOG(LogTemp, Warning, TEXT("[CombatComponent] Weapon FOUND: %s"), *FoundWeapon->GetName());
+
+    // Instigator / Owner 검사
+    AActor* Owner = FoundWeapon->GetOwner();
+    APawn* Instigator = FoundWeapon->GetInstigator();
+
+    if (!Owner)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("[CombatComponent] Weapon '%s' has NO OWNER."), *FoundWeapon->GetName());
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("[CombatComponent] Owner: %s"), *Owner->GetName());
+    }
+
+    if (!Instigator)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("[CombatComponent] Weapon '%s' has NO INSTIGATOR."), *FoundWeapon->GetName());
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("[CombatComponent] Instigator: %s"), *Instigator->GetName());
+    }
+
+    // 4️⃣ Collision 상태 확인
+    const bool bOverlapEnabled = FoundWeapon->GetWeaponCollisionBox()->GetGenerateOverlapEvents();
+    const ECollisionEnabled::Type CollisionEnabled = FoundWeapon->GetWeaponCollisionBox()->GetCollisionEnabled();
+
+    UE_LOG(LogTemp, Warning, TEXT("[CombatComponent] Collision Enabled: %s, GenerateOverlapEvents: %s"),
+        *UEnum::GetValueAsString(CollisionEnabled),
+        bOverlapEnabled ? TEXT("true") : TEXT("false")
+    );
+
+    return true;
+}
+
+
 AWarriorWeaponBase* UPawnCombatComponent::GetCharacterCurrentEquippedWeapon() const
 {
  	if (!CurrentEquippedWeaponTag.IsValid())

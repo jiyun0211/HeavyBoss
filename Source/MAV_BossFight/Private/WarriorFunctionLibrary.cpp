@@ -109,13 +109,6 @@ AActor* UWarriorFunctionLibrary::GetAvatarActorSafe(UAbilitySystemComponent* ASC
     return ASC ? ASC->GetAvatarActor() : nullptr;
 }
 
-int32 UWarriorFunctionLibrary::GetAbilityLevelSafe(const FGameplayAbilitySpecHandle& Handle, UAbilitySystemComponent* ASC)
-{
-    if (!ASC) return 1;
-    
-    const FGameplayAbilitySpec* Spec = ASC->FindAbilitySpecFromHandle(Handle);
-    return Spec ? Spec->Level : 1;
-}
 
 FGameplayEffectSpecHandle UWarriorFunctionLibrary::MakePlayerStaminaEffectSpecHandle(
     UPlayerAbilitySystemComponent* ASC,

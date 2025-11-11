@@ -27,6 +27,10 @@ class MAV_BOSSFIGHT_API UPlayerGameplayAbility : public UGameplayAbility
 	GENERATED_BODY()
 
 public:
+	
+ 	UFUNCTION(BlueprintPure, Category = "Warrior|Ability")
+ 	APlayerCharacter* GetPlayerCharacterFromActorInfo();
+
 	UFUNCTION(BlueprintCallable, Category = "Combat")
 	int32 GetComboModeFromCharacter() const;
 
@@ -48,5 +52,6 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Warrior|Ability", meta = (DisplayName = "Apply Gameplay Effect Spec Handle To Target Actor", ExpandEnumAsExecs = "OutSuccessType"))
 	FActiveGameplayEffectHandle BP_ApplyEffectSpecHandleToTarget(AActor* TargetActor,const FGameplayEffectSpecHandle& InSpecHandle,EWarriorSuccessType& OutSuccessType);
-
+private:
+	TWeakObjectPtr<APlayerCharacter> CachedPlayerCharacter;
 };

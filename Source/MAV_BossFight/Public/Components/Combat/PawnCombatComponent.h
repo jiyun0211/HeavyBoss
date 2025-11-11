@@ -45,6 +45,11 @@ public:
 	virtual void OnHitTargetActor(AActor* HitActor);
 	virtual void OnWeaponPulledFromTargetActor(AActor* InteractedActor);
 
+	UFUNCTION(BlueprintCallable, Category="Combat|Weapon")
+    void ToggleWeaponCollisionByTag(FGameplayTag WeaponTag, bool bEnable);
+	UFUNCTION(BlueprintCallable, Category="Combat|Debug")
+	bool DebugCheckWeaponByTag(FGameplayTag WeaponTag);
+
 protected:
 	TArray<AActor*> OverlappedActors;
 	

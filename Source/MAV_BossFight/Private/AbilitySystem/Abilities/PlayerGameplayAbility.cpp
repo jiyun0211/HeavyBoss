@@ -8,7 +8,15 @@
 #include "AbilitySystemBlueprintLibrary.h"
 
 
-
+APlayerCharacter* UPlayerGameplayAbility::GetPlayerCharacterFromActorInfo()
+{   
+    if (!CachedPlayerCharacter.IsValid())
+    {
+        CachedPlayerCharacter = Cast<APlayerCharacter>(CurrentActorInfo->AvatarActor);
+    }
+   
+    return CachedPlayerCharacter.IsValid()? CachedPlayerCharacter.Get() : nullptr;
+}
  
 void UPlayerGameplayAbility::OnGiveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec)
 {
@@ -62,7 +70,7 @@ FActiveGameplayEffectHandle UPlayerGameplayAbility::NativeApplyEffectSpecHandleT
 
 	if (!TargetASC)
 	{
-		UE_LOG(LogTemp, Error, TEXT("NativeApplyEffectSpecHandleToTarget: TargetASC is null. TargetActor: %s"), *GetNameSafe(TargetActor));
+		UE_LOG(LogTemp, Error, TEXT("NativeApplyEffectSpecHandleToTarget!: TargetASC is null. TargetActor: %s"), *GetNameSafe(TargetActor));
 		return FActiveGameplayEffectHandle(); // Invalid handle 반환
 	}
 

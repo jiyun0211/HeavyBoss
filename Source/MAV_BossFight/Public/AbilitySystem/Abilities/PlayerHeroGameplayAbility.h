@@ -19,9 +19,7 @@ class MAV_BOSSFIGHT_API UPlayerHeroGameplayAbility : public UPlayerGameplayAbili
 
 	
 public:
- 	UFUNCTION(BlueprintPure, Category = "Warrior|Ability")
- 	APlayerCharacter* GetPlayerCharacterFromActorInfo();
- 
+
  	UFUNCTION(BlueprintPure, Category = "Warrior|Ability")
  	AMyPlayerController* GetMyControllerFromActorInfo();
  

@@ -53,8 +53,6 @@ public:
 	
 	static AActor* GetAvatarActorSafe(UAbilitySystemComponent* ASC);
     
-	static int32 GetAbilityLevelSafe(const FGameplayAbilitySpecHandle& Handle, UAbilitySystemComponent* ASC);
-
 	UFUNCTION(BlueprintPure, Category = "Warrior|Ability")
     static FGameplayEffectSpecHandle MakePlayerStaminaEffectSpecHandle(
         UPlayerAbilitySystemComponent* ASC,

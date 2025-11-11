@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "WarriorFunctionLibrary.h"
 #include "WarriorWeaponBase.generated.h"
 
 class UBoxComponent;
@@ -21,7 +22,9 @@ public:
 
 	FOnTargetInteractedDelegate OnWeaponHitTarget;
 	FOnTargetInteractedDelegate OnWeaponPulledFromTarget;
-
+	
+	UFUNCTION(BlueprintCallable, Category="Weapons")
+	void ToggleCollision(bool bEnable);
 protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapons")
@@ -35,7 +38,6 @@ protected:
 
 	UFUNCTION()
 	virtual void OnCollisionBoxEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
-
 public:
 	FORCEINLINE UBoxComponent* GetWeaponCollisionBox() const { return WeaponCollisionBox;}
 };

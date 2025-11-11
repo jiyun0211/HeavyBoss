@@ -3,7 +3,6 @@
  
 #include "Items/Weapons/WarriorWeaponBase.h"
 #include "Components/BoxComponent.h"
-
 #include "MAV_BossFightDebugHelper.h"
 
 AWarriorWeaponBase::AWarriorWeaponBase()
@@ -50,4 +49,12 @@ void AWarriorWeaponBase::OnCollisionBoxEndOverlap(UPrimitiveComponent* Overlappe
 			OnWeaponHitTarget.ExecuteIfBound(OtherActor);
 		}
 	}
+}
+
+void AWarriorWeaponBase::ToggleCollision(bool bEnable)
+{
+    if (bEnable)
+        WeaponCollisionBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+    else
+        WeaponCollisionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }

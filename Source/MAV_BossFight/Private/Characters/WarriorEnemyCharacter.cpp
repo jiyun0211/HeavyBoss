@@ -63,3 +63,19 @@ void AWarriorEnemyCharacter::InitEnemyStartUpData()
 		)
 	);
 }
+
+void AWarriorEnemyCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	UCharacterMovementComponent* CMC = GetCharacterMovement();
+    ensure(CMC);
+
+	if (!CMC->IsActive())
+    {
+        CMC->Activate(true);
+    }
+    if (CMC->MovementMode == MOVE_None)
+    {
+        CMC->SetMovementMode(MOVE_Walking);
+    }
+}
