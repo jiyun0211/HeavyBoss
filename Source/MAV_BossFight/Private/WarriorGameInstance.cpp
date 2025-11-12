@@ -68,8 +68,5 @@ void UWarriorGameInstance::SaveClearTime(float Time)
     PlayFab::ClientModels::FUpdateUserDataRequest Request;
     Request.Data.Add("ClearTime", TimeString);
 
-    UPlayFabClientAPI::UpdateUserData(Request,
-        PlayFab::UPlayFabClientAPI::FUpdateUserDataDelegate::CreateUObject(this, &UWarriorGameInstance::OnSaveSuccess),
-        PlayFab::FPlayFabErrorDelegate::CreateUObject(this, &UWarriorGameInstance::OnSaveError)
-    );
+    
 }
