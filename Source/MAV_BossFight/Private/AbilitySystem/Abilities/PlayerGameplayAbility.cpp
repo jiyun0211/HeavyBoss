@@ -45,6 +45,20 @@ void UPlayerGameplayAbility::EndAbility(const FGameplayAbilitySpecHandle Handle,
 {
  	Super::EndAbility(Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled);
 	
+	if (ActorInfo && ActorInfo->AvatarActor.IsValid())
+    {
+        FGameplayEventData EventData;
+        EventData.EventTag = FGameplayTag::RequestGameplayTag(FName("Shared.Event.AbilityEnd"));
+        EventData.Instigator = ActorInfo->OwnerActor.Get();
+        EventData.Target = ActorInfo->AvatarActor.Get();
+
+        UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(
+            ActorInfo->AvatarActor.Get(),
+            EventData.EventTag,
+            EventData
+        );
+    }
+
  	if (AbilityActivationPolicy == EPlayerAbilityActivationPolicy::OnGiven)
  	{
  		if (ActorInfo)

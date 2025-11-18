@@ -15,7 +15,7 @@ public class MAV_BossFight : ModuleRules
 			"InputCore",
             "GameplayTags",
 			"EnhancedInput",
-			"GamePlayTasks",
+			"GameplayTasks",
             "MotionWarping"});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { "PlayFab", "PlayFabCpp", "PlayFabCommon" });
