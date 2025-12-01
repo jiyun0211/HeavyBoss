@@ -39,6 +39,14 @@ public:
 	FGameplayAttributeData MaxHealth;
 	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,MaxHealth)
 
+	UPROPERTY(BlueprintReadOnly, Category = "Recover")
+	FGameplayAttributeData RecoveryCool;
+	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,RecoveryCool)
+
+	UPROPERTY(BlueprintReadOnly, Category = "Recover")
+	FGameplayAttributeData MaxCool;
+	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,MaxCool)
+	
 	UPROPERTY(BlueprintReadOnly, Category = "Damage")
 	FGameplayAttributeData AttackPower;
 	ATTRIBUTE_ACCESSORS(UPlayerAttributeSet,AttackPower)

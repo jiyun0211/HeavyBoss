@@ -8,6 +8,7 @@ UPlayerAttributeSet::UPlayerAttributeSet()
     InitCurrentHealth(1.f);
     InitPhase(1.f);
     InitMaxHealth(1.f);
+    InitMaxCool(1.f);
     InitAttackPower(1.f);
     InitDefensePower(1.f);
 	InitLevel(1.f);
@@ -56,4 +57,8 @@ void UPlayerAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCall
 	{
 		SetLevel(FMath::Clamp(GetLevel(), 1.f, 5.f));
 	}
+    if (Data.EvaluatedData.Attribute == GetRecoveryCoolAttribute())
+    {
+        SetRecoveryCool(FMath::Clamp(GetRecoveryCool(), 0.f, GetMaxCool()));
+    }
 }
