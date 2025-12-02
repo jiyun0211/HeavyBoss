@@ -41,7 +41,7 @@ void UEnemyCombatComponent::OnHitTargetActor(AActor* HitActor)
                 float OpponentLevel = OpponentAttributes->GetLevel();
                 
                 // Level 조건 검사
-                if (MyLevel > OpponentLevel)
+                if (MyLevel >= OpponentLevel)
                 {
                     UE_LOG(LogTemp, Log, TEXT("Shield Ignored"));
                     bIsValidBlock = false;
